@@ -17,6 +17,7 @@ func main() {
 	flag.Parse()
 
 	fmt.Printf("param %s:%s\n", *src, *dst)
+	fmt.Println("SECRET_TOKEN =", os.Getenv("SECRET_TOKEN"))
 	fmt.Println("$SECRET_TOKEN =", os.Getenv("$SECRET_TOKEN"))
 	fmt.Println("$$SECRET_TOKEN =", os.Getenv("$$SECRET_TOKEN"))
 
