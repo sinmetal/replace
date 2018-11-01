@@ -1,0 +1,9 @@
+runtime: go111
+
+env_variables:
+  SECRET_TOKEN: "moge"
+
+handlers:
+- url: /.*
+  secure: always
+  script: auto
