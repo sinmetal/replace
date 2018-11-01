@@ -23,12 +23,15 @@ func main() {
 
 	srcText := *src
 	if strings.HasPrefix(*src, "$") {
-		srcText = os.Getenv(*src)
+		s := *src
+		srcText = os.Getenv(s[1:])
 	}
 	dstText := *dst
 	if strings.HasPrefix(*dst, "$") {
-		dstText = os.Getenv(*dst)
+		s := *dst
+		dstText = os.Getenv(s[1:])
 	}
+	fmt.Printf("old:new, %s:%s\n", srcText, dstText)
 
 	buf := bytes.Buffer{}
 	f, err := os.OpenFile(*fileName, os.O_RDWR, 0666)
